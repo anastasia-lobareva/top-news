@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="NewsReusableCell" rowHeight="176" id="KGk-i7-Jjw" customClass="NewsCellTableViewCell" customModule="TopNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="411" height="176"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="411" height="176"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vjW-Uv-LOq">
+                        <rect key="frame" x="1" y="1" width="134.66666666666666" height="174"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authur" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16Y-qf-HNT">
+                                <rect key="frame" x="0.0" y="0.0" width="134.66666666666666" height="20.333333333333332"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvk-xk-veo">
+                                <rect key="frame" x="0.0" y="24.333333333333336" width="134.66666666666666" height="111.33333333333331"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfj-AS-1pe">
+                                <rect key="frame" x="0.0" y="139.66666666666666" width="134.66666666666666" height="34.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="9ok-cr-s9z"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.right.circle" catalog="system" title="READ NEWS" subtitle="" cornerStyle="small">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                    <color key="baseForegroundColor" name="ButtonColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="linkSelected:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bQY-6r-fFN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vjW-Uv-LOq" secondAttribute="trailing" constant="1" id="5a1-OU-tVI"/>
+                    <constraint firstItem="vjW-Uv-LOq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="1" id="OqS-85-Mbb"/>
+                    <constraint firstItem="vjW-Uv-LOq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="hKf-dn-G9M"/>
+                    <constraint firstAttribute="bottom" secondItem="vjW-Uv-LOq" secondAttribute="bottom" constant="1" id="xz9-PC-2dD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorLable" destination="16Y-qf-HNT" id="VbJ-vx-uW8"/>
+                <outlet property="linkButton" destination="Sfj-AS-1pe" id="Fm4-3q-KH8"/>
+                <outlet property="titleLable" destination="Yvk-xk-veo" id="7wF-AT-yWM"/>
+            </connections>
+            <point key="canvasLocation" x="-341.2213740458015" y="-0.70422535211267612"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrowshape.right.circle" catalog="system" width="128" height="123"/>
+        <namedColor name="ButtonColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,8 @@
+.DS_Store
+build/
+DerivedData/
+*.swp
+*.lock
+*~.nib
+*.orig
+*.log

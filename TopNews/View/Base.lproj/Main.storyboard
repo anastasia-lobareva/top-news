@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7x5-AI-Y4K">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select Country View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SelectCountryViewController" customModule="TopNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="104" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-TH-4p1">
+                                <rect key="frame" x="0.0" y="143" width="393" height="596"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meb-sh-pTX">
+                                        <rect key="frame" x="73.333333333333329" y="0.0" width="246.33333333333337" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="vQH-IE-GEQ">
+                                        <rect key="frame" x="36.666666666666657" y="152" width="320" height="300"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="iHo-da-uZh"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dW5-Lw-uZM">
+                                        <rect key="frame" x="140" y="556" width="113" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="cmH-Xm-2Ft"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Show News" cornerStyle="small">
+                                            <backgroundConfiguration key="background" strokeWidth="3" strokeOutset="9">
+                                                <color key="strokeColor" name="ButtonColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" name="ButtonColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showNewButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jG3-es-2WY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="AccentColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Za-TH-4p1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1gk-dP-vAm"/>
+                            <constraint firstItem="3Za-TH-4p1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="d2o-WJ-o9c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Za-TH-4p1" secondAttribute="trailing" id="zeB-tH-FJk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MdI-SJ-6Zd"/>
+                    <connections>
+                        <outlet property="countryPicker" destination="vQH-IE-GEQ" id="xB3-7B-P1Y"/>
+                        <outlet property="selectLable" destination="meb-sh-pTX" id="Hto-U4-skU"/>
+                        <outlet property="showNewsButton" destination="dW5-Lw-uZM" id="oQw-3n-1i6"/>
+                        <segue destination="Vmn-ls-TYP" kind="show" identifier="goToCountryNews" id="4ke-kq-ppt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038.9312977099237" y="-2.1126760563380285"/>
+        </scene>
+        <!--Display News View Controller-->
+        <scene sceneID="OGz-qt-YAg">
+            <objects>
+                <viewController id="Vmn-ls-TYP" customClass="DisplayNewsViewController" customModule="TopNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="psM-1p-KxI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AOZ-Jx-aPo">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qS2-bM-R9I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AOZ-Jx-aPo" firstAttribute="trailing" secondItem="qS2-bM-R9I" secondAttribute="trailing" id="4Fl-Sx-ZO7"/>
+                            <constraint firstItem="AOZ-Jx-aPo" firstAttribute="top" secondItem="psM-1p-KxI" secondAttribute="top" id="BVo-vQ-CJv"/>
+                            <constraint firstAttribute="bottom" secondItem="AOZ-Jx-aPo" secondAttribute="bottom" id="gyD-bb-eV4"/>
+                            <constraint firstItem="AOZ-Jx-aPo" firstAttribute="leading" secondItem="qS2-bM-R9I" secondAttribute="leading" id="juf-sY-exv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UPN-gU-Dj1"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="AOZ-Jx-aPo" id="Tlw-XH-5R2"/>
+                        <segue destination="q7Y-Be-HpL" kind="show" identifier="goToSelectedNews" id="adC-dp-IRX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FxV-rm-lOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773.2824427480916" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FNx-FW-HDW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7x5-AI-Y4K" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HIJ-hW-xJr">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KtE-AJ-fSz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fwk-qx-uHK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112.21374045801527" y="-2.1126760563380285"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="fhf-go-Ujw">
+            <objects>
+                <viewController id="q7Y-Be-HpL" customClass="WebViewController" customModule="TopNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JKq-CG-ZiD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3m-me-g9h">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4iF-DL-F1I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u3m-me-g9h" firstAttribute="bottom" secondItem="4iF-DL-F1I" secondAttribute="bottom" id="0Tq-Sv-O5M"/>
+                            <constraint firstItem="u3m-me-g9h" firstAttribute="trailing" secondItem="4iF-DL-F1I" secondAttribute="trailing" id="GCE-8y-0b0"/>
+                            <constraint firstItem="u3m-me-g9h" firstAttribute="leading" secondItem="4iF-DL-F1I" secondAttribute="leading" id="Wcc-zj-vcS"/>
+                            <constraint firstItem="u3m-me-g9h" firstAttribute="top" secondItem="4iF-DL-F1I" secondAttribute="top" id="yKj-h2-5nh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qcs-L8-frk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PbQ-qz-veD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2535.1145038167938" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.42699998617172241" green="0.89399999380111694" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ButtonColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
